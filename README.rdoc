@@ -1,0 +1,1 @@
+Welcome to my sample Ruby on Rails application designed to explore and learn more about RESTful web service - client.
