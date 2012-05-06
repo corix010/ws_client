@@ -1,5 +1,6 @@
 WsClient::Application.routes.draw do
   resources :checklists
+  match '/get-remote-vehicles', :to => "checklists#get_remote_vehicles", :as => "get_remote_vehicles"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,4 +1,21 @@
+require 'net/http'
+
 class ChecklistsController < ApplicationController
+
+  def get_remote_vehicles
+    callsign = params[:callsign]
+    remote_vehicles_url = "http://localhost:3010/vehicles.json?callsign=#{callsign}"
+    url = URI.parse(remote_vehicles_url)
+    req = Net::HTTP::Get.new(remote_vehicles_url)
+    res = Net::HTTP.start(url.host, url.port) {|http|
+      http.request(req)
+    }
+    respond_to do |format|
+      format.json { render json: res.body }
+    end
+  end
+
+
   # GET /checklists
   # GET /checklists.json
   def index

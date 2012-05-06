@@ -2,4 +2,32 @@
 
 <%= render 'form' %>
 
+<div id="loading"></div>
+<input type="text" name="callsign" id="callsign"> &nbsp; <input type="button" value="Search" id="search_vehicle_btn" />
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#search_vehicle_btn").click(function(){
+        $.ajax({
+            beforeSend: function(){
+              $("#loading").html('Loading...');
+            },
+            url: "http://localhost:3000/get-remote-vehicles.json?callsign=" + $("#callsign").val(),
+            success: function(response){
+              $("#loading").html('');
+              if(response.length == 0)
+              {
+                 alert("No vehicle was found with callsign: " + $("#callsign").val());
+                 $("form#new_checklist")[0].reset();
+                 return;
+              }
+              $("#checklist_vehicle_number").val(response[0].number);
+              $("#checklist_location").val(response[0].location);
+            }
+        })
+    });
+  });
+</script>
+
+<br />
 <%= link_to 'Back', checklists_path %>
