@@ -1,28 +1,30 @@
 <h1>New checklist</h1>
 
-<%= render 'form' %>
+Callsign:<br />
+<input type="text" name="callsign" id="callsign">&nbsp;<input type="button" value="Search" id="search_vehicle_btn" />
+<div id="status"></div>
 
-<div id="loading"></div>
-<input type="text" name="callsign" id="callsign"> &nbsp; <input type="button" value="Search" id="search_vehicle_btn" />
+<%= render 'form' %>
 
 <script type="text/javascript">
   $(document).ready(function(){
     $("#search_vehicle_btn").click(function(){
         $.ajax({
             beforeSend: function(){
-              $("#loading").html('Loading...');
+              $("#status").html('Retrieving info...');
             },
             url: "http://localhost:3000/get-remote-vehicles.json?callsign=" + $("#callsign").val(),
             success: function(response){
-              $("#loading").html('');
               if(response.length == 0)
               {
-                 alert("No vehicle was found with callsign: " + $("#callsign").val());
+                 // alert("No vehicle was found with callsign: " + $("#callsign").val());
+                 $("#status").html('No record found');
                  $("form#new_checklist")[0].reset();
                  return;
               }
               $("#checklist_vehicle_number").val(response[0].number);
               $("#checklist_location").val(response[0].location);
+              $("#status").html('');
             }
         })
     });

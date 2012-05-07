@@ -3,6 +3,14 @@ require 'net/http'
 class ChecklistsController < ApplicationController
 
   def get_remote_vehicles
+    # url = URI.parse('http://localhost:3010/vehicles.json?callsign=11')
+    # # req = Net::HTTP::Get.new(url.path)
+    # req = Net::HTTP::Get.new("http://localhost:3002/vehicles.json?callsign=1")
+    # res = Net::HTTP.start(url.host, url.port) {|http|
+    # http.request(req)
+    # }
+    # parsed_json = ActiveSupport::JSON.decode(res.body)
+    # raise parsed_json.inspect
     callsign = params[:callsign]
     remote_vehicles_url = "http://localhost:3010/vehicles.json?callsign=#{callsign}"
     url = URI.parse(remote_vehicles_url)
@@ -14,7 +22,6 @@ class ChecklistsController < ApplicationController
       format.json { render json: res.body }
     end
   end
-
 
   # GET /checklists
   # GET /checklists.json
@@ -41,15 +48,6 @@ class ChecklistsController < ApplicationController
   # GET /checklists/new
   # GET /checklists/new.json
   def new
-    # url = URI.parse('http://localhost:3010/vehicles.json?callsign=11')
-    # # req = Net::HTTP::Get.new(url.path)
-    # req = Net::HTTP::Get.new("http://localhost:3002/vehicles.json?callsign=1")
-    # res = Net::HTTP.start(url.host, url.port) {|http|
-    # http.request(req)
-    # }
-    # parsed_json = ActiveSupport::JSON.decode(res.body)
-    # raise parsed_json.inspect
-
     @checklist = Checklist.new
 
     respond_to do |format|
@@ -106,4 +104,5 @@ class ChecklistsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end
