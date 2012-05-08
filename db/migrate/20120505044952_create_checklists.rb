@@ -1,7 +1,7 @@
 class CreateChecklists < ActiveRecord::Migration
   def change
     create_table :checklists do |t|
-      t.string :vehicle_number
+      t.integer :vehicle_id
       t.string :location
       t.string :status
       t.string :driver

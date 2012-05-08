@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= f.label :vehicle_number %><br />
-    <%= f.text_field :vehicle_number %>
+    <%= f.text_field :vehicle_id %>
+    <%= f.collection_select :vehicle_id, Vehicle.all, :id, :number %>
   </div>
   <div class="field">
     <%= f.label :location %><br />

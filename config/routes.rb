@@ -1,4 +1,6 @@
 WsClient::Application.routes.draw do
+  resources :vehicles
+
   resources :checklists
   match '/get-remote-vehicles', :to => "checklists#get_remote_vehicles", :as => "get_remote_vehicles"
 
