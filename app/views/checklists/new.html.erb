@@ -24,6 +24,7 @@ Callsign:<br />
               }
               $("#checklist_vehicle_number").val(response[0].number);
               $("#checklist_location").val(response[0].location);
+              $('#vehicle_vehicle_id :selected').text(response[0].number);
               $("#status").html('');
             }
         })

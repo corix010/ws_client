@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(:version => 20120508025715) do
 
   create_table "checklists", :force => true do |t|
-    t.integer  "vehicle_id"
+    t.string   "vehicle_number"
     t.string   "location"
     t.string   "status"
     t.string   "driver"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "vehicles", :force => true do |t|
