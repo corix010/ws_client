@@ -25,7 +25,7 @@
       <file leaf-file-name="new.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/checklists/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="72" selection-start="1082" selection-end="1082" vertical-scroll-proportion="0.54382825">
+            <state line="21" column="78" selection-start="962" selection-end="962" vertical-scroll-proportion="0.45259392">
               <folding />
             </state>
           </provider>
@@ -61,7 +61,7 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/checklists/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="30" selection-start="904" selection-end="904" vertical-scroll-proportion="-20.192308">
+            <state line="33" column="20" selection-start="924" selection-end="924" vertical-scroll-proportion="-19.538462">
               <folding />
             </state>
           </provider>
@@ -466,13 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/checklists/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="30" selection-start="904" selection-end="904" vertical-scroll-proportion="-20.192308">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/checklists/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="21" selection-start="93" selection-end="93" vertical-scroll-proportion="-3.2692308">
@@ -480,9 +473,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/checklists/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="20" selection-start="924" selection-end="924" vertical-scroll-proportion="-19.538462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/checklists/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="72" selection-start="1082" selection-end="1082" vertical-scroll-proportion="0.54382825">
+        <state line="21" column="78" selection-start="962" selection-end="962" vertical-scroll-proportion="0.45259392">
           <folding />
         </state>
       </provider>
