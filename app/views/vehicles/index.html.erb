@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Number</th>
+    <th>Call Sign</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +12,7 @@
 <% @vehicles.each do |vehicle| %>
   <tr>
     <td><%= vehicle.number %></td>
+    <td><%= @vehicle_hash[vehicle.number]["callsign"]%></td>
     <td><%= link_to 'Show', vehicle %></td>
     <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
     <td><%= link_to 'Destroy', vehicle, confirm: 'Are you sure?', method: :delete %></td>
@@ -19,5 +21,7 @@
 </table>
 
 <br />
+
+<%= will_paginate @vehicles %>
 
 <%= link_to 'New Vehicle', new_vehicle_path %>

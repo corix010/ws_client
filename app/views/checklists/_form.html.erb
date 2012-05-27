@@ -14,7 +14,7 @@
   <div class="field">
     <%= f.label :vehicle_number %><br />
     <%#= f.text_field :vehicle_id %>
-    <%= collection_select :vehicle, :vehicle_id, Vehicle.all, :id, :number, :prompt => 'Select' %>
+    <%= f.collection_select :vehicle_number, Vehicle.all, :id, :number, :prompt => 'Select' %>
   </div>
   <div class="field">
     <%= f.label :location %><br />

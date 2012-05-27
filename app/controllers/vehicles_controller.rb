@@ -1,8 +1,25 @@
+require 'net/http'
+
 class VehiclesController < ApplicationController
   # GET /vehicles
   # GET /vehicles.json
   def index
-    @vehicles = Vehicle.all
+    @vehicles = Vehicle.paginate :page => params[:page], :per_page => 2
+    @vehicle_ids = @vehicles.map(&:number)
+
+
+    remote_vehicles_url = "http://localhost:3010/vehicles.json?vehicle_numbers=#{@vehicle_ids.join(',')}"
+    url = URI.parse(remote_vehicles_url)
+    req = Net::HTTP::Get.new(remote_vehicles_url)
+    res = Net::HTTP.start(url.host, url.port) {|http|
+      http.request(req)
+    }
+
+    @vehicle_hash = {}
+    vehicles_from_server = JSON.parse(res.body)
+    vehicles_from_server.each do |vehicle|
+      @vehicle_hash["#{vehicle["number"]}"] = vehicle
+    end
 
     respond_to do |format|
       format.html # index.html.erb

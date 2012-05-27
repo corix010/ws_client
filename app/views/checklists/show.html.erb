@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+      <%= @checklist.inspect %>
 <p>
   <b>Vehicle number:</b>
-  <%= @checklist.vehicle.number %>
+  <%= @checklist.vehicle.number if @checklist.vehicle %>
 </p>
 
 <p>

@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120508025715) do
 
   create_table "checklists", :force => true do |t|
-    t.string   "vehicle_number"
+    t.string   "vehicle_id"
     t.string   "location"
     t.string   "status"
     t.string   "driver"

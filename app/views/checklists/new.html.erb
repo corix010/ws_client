@@ -18,15 +18,18 @@ Callsign:<br/>
                     if (response.length == 0) {
                         // alert("No vehicle was found with callsign: " + $("#callsign").val());
                         $("#status").html('No record found');
-                        //$("form#new_checklist")[0].reset();
-                        $('#vehicle_vehicle_id option').removeAttr('selected')
+                        $("form#new_checklist")[0].reset();
+                        $('#checklist_vehicle_number option').removeAttr('selected')
+                        $("#checklist_vehicle_number option:first").attr('selected','selected');
+                        //$("#checklist_location").val('');
+
                         return;
                     }
                     else {
                         $("#checklist_vehicle_number").val(response[0].number);
                         $("#checklist_location").val(response[0].location);
-                        $('#vehicle_vehicle_id option').removeAttr('selected')
-                        $('#vehicle_vehicle_id option').each(function () {
+                        $('#checklist_vehicle_number option').removeAttr('selected')
+                        $('#checklist_vehicle_number option').each(function () {
                             if ($(this).text() == response[0].number)
                                 $(this).attr('selected', 'selected')
                         })
